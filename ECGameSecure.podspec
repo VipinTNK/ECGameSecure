@@ -29,4 +29,4 @@ s.dependency 'AMPopTip'
 s.dependency 'Charts'
 s.dependency 'Alamofire'
  
-end
+end 
