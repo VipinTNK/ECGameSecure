@@ -6,9 +6,9 @@ PODS:
   - Charts/Core (3.4.0)
   - DropDown (2.3.4)
   - IQKeyboardManagerSwift (6.5.5)
-  - Kingfisher (5.13.0):
-    - Kingfisher/Core (= 5.13.0)
-  - Kingfisher/Core (5.13.0)
+  - Kingfisher (5.13.1):
+    - Kingfisher/Core (= 5.13.1)
+  - Kingfisher/Core (5.13.1)
   - MBProgressHUD (1.2.0)
   - ObjectMapper (3.5.1)
   - SimpleAnimation (0.4.2)
@@ -48,7 +48,7 @@ SPEC CHECKSUMS:
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
-  Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
+  Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171

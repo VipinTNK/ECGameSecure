@@ -27,6 +27,6 @@ s.dependency 'ObjectMapper'
 s.dependency 'DropDown', '2.3.4'
 s.dependency 'AMPopTip'
 s.dependency 'Charts'
-s.dependency 'Alamofire'
+s.dependency 'Alamofire', '4.9.1'
  
 end 
