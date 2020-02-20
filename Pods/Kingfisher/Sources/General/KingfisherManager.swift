@@ -125,7 +125,7 @@ public class KingfisherManager {
     /// Gets an image from a given resource.
     /// - Parameters:
     ///   - resource: The `Resource` object defines data information like key or URL.
-    ///   - options: Options to use when creating the image.
+    ///   - options: Options to use when creating the animated image.
     ///   - progressBlock: Called when the image downloading progress gets updated. If the response does not contain an
     ///                    `expectedContentLength`, this block will not be called. `progressBlock` is always called in
     ///                    main queue.
@@ -150,8 +150,9 @@ public class KingfisherManager {
         downloadTaskUpdated: DownloadTaskUpdatedBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask?
     {
+        let source = Source.network(resource)
         return retrieveImage(
-            with: resource.convertToSource(),
+            with: source,
             options: options,
             progressBlock: progressBlock,
             downloadTaskUpdated: downloadTaskUpdated,
@@ -163,7 +164,7 @@ public class KingfisherManager {
     ///
     /// - Parameters:
     ///   - source: The `Source` object defines data information from network or a data provider.
-    ///   - options: Options to use when creating the image.
+    ///   - options: Options to use when creating the animated image.
     ///   - progressBlock: Called when the image downloading progress gets updated. If the response does not contain an
     ///                    `expectedContentLength`, this block will not be called. `progressBlock` is always called in
     ///                    main queue.
