@@ -1,6 +1,6 @@
-git Pod::Spec.new do |s|
+Pod::Spec.new do |s|
   s.name             = 'ECGameSecure'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'This is betting app for casino users'
  
   s.description      = 'User can bet on multiple option in casino like first digit, last digit and enjoy the quality time in casino'
@@ -29,4 +29,4 @@ s.dependency 'AMPopTip'
 s.dependency 'Charts'
 s.dependency 'Alamofire', '4.9.1'
  
-end 
+end
