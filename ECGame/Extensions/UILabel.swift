@@ -19,7 +19,7 @@ extension UILabel {
         self.backgroundColor = bgColor
     
     }
-    
+    /*
     func animation(typing value:String,duration: Double){
       let characters = value.map { $0 }
       var index = 0
@@ -32,7 +32,7 @@ extension UILabel {
               timer.invalidate()
           }
       })
-    }
+    } */
 
 
     func textWithAnimation(text:String,duration:CFTimeInterval){
@@ -63,8 +63,8 @@ extension UIButton {
         self.sizeToFit()
     }
     
-    func renderColorOnImage(_ imageString : String, imageColor : UIColor) {
-        let originalImage = UIImage(named: imageString)
+    func renderColorOnImage(_ imageString : String, imageColor : UIColor, viewC: GameViewController) {
+        let originalImage = UIImage.init(named: imageString, in: Bundle.init(for: viewC.classForCoder), compatibleWith: nil)
         let tintedImage = originalImage?.withRenderingMode(.alwaysTemplate)
         self.setImage(tintedImage, for: .normal)
         self.tintColor = imageColor

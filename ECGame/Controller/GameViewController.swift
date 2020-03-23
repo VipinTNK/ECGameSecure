@@ -754,6 +754,7 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
         chartView.xAxis.drawLimitLinesBehindDataEnabled = true
         chartView.xAxis.avoidFirstLastClippingEnabled = true
         chartView.backgroundColor = UIColor.clear
+        chartView.xAxis.labelFont = UIFont.systemFont(ofSize: 8)
         let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 0.7),
                                    font: .systemFont(ofSize: 11),
                                    textColor: .white,
@@ -1180,14 +1181,14 @@ extension GameViewController {
                             if items.results == 0 {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                                     UIView.animate(withDuration: 1.0) {
-                                        self.bellButton.renderColorOnImage("notificationIcon", imageColor: CommonMethods.hexStringToUIColor(hex: Color.btnRedColor))
+                                        self.bellButton.renderColorOnImage("notificationIcon", imageColor: CommonMethods.hexStringToUIColor(hex: Color.btnRedColor), viewC: self)
                                     }
                                 })
                             }
                             else if items.results == 1 {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                                     UIView.animate(withDuration: 1.0) {
-                                        self.bellButton.renderColorOnImage("notificationIcon", imageColor: CommonMethods.hexStringToUIColor(hex: Color.btnGreenColor))
+                                        self.bellButton.renderColorOnImage("notificationIcon", imageColor: CommonMethods.hexStringToUIColor(hex: Color.btnGreenColor), viewC: self)
                                     }
                                 })
                             }
@@ -1195,7 +1196,7 @@ extension GameViewController {
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + Double(list.count)*2, execute: {
                             UIView.animate(withDuration: 1.0) {
-                                self.bellButton.renderColorOnImage("notificationIcon", imageColor: CommonMethods.hexStringToUIColor(hex: Color.btnWhiteColor))
+                                self.bellButton.renderColorOnImage("notificationIcon", imageColor: CommonMethods.hexStringToUIColor(hex: Color.btnWhiteColor), viewC: self)
                             }
                         })
                     }
