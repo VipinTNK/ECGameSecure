@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ECGameSecure'
-  s.version          = '1.3.2'
+  s.version          = '1.3.3'
   s.summary          = 'This is betting app for casino users'
  
   s.description      = 'User can bet on multiple option in casino like first digit, last digit and enjoy the quality time in casino'
