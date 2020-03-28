@@ -102,7 +102,6 @@ class BetHistoryViewController: UIViewController,UIGestureRecognizerDelegate,dat
         datePickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         datePickerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.view.addSubview(datePickerView)
-        datePickerView.popIn()
     }
     
     //MARK:- Picker custom Delegate

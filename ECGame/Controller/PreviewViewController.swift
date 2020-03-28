@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import DropDown
 import ObjectMapper
 import IQKeyboardManagerSwift
 
@@ -30,7 +29,7 @@ class PreviewViewController: UIViewController, LanguageDelegate, UITableViewDele
     //MARK: - Variables -
     var languagePopupView = LanguageView()
     var player : AVAudioPlayer?
-    let dropDownObj = DropDown()
+   // let dropDownObj = DropDown()
     var notificationModel : NotificationModel?
     var selectedStockIds = "4,5,7"
     var timeloop = 60
@@ -163,7 +162,6 @@ class PreviewViewController: UIViewController, LanguageDelegate, UITableViewDele
         languagePopupView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.view.addSubview(languagePopupView)
         languagePopupView.layer.zPosition = 1
-        languagePopupView.popIn()
         self.view.bringSubviewToFront(languagePopupView)
     }
     

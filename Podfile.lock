@@ -4,14 +4,10 @@ PODS:
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
-  - DropDown (2.3.4)
   - IQKeyboardManagerSwift (6.5.4)
-  - Kingfisher (5.13.2):
-    - Kingfisher/Core (= 5.13.2)
-  - Kingfisher/Core (5.13.2)
+  - Kingfisher (4.9.0)
   - MBProgressHUD (1.1.0)
   - ObjectMapper (3.5.1)
-  - SimpleAnimation (0.4.2)
   - SwiftyJSON (4.3.0)
   - Toast-Swift (4.0.1)
 
@@ -19,12 +15,10 @@ DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - AMPopTip
   - Charts
-  - DropDown (= 2.3.4)
   - IQKeyboardManagerSwift (= 6.5.4)
-  - Kingfisher
+  - Kingfisher (= 4.9.0)
   - MBProgressHUD (= 1.1.0)
   - ObjectMapper
-  - SimpleAnimation
   - SwiftyJSON (~> 4.0)
   - Toast-Swift (~> 4.0.0)
 
@@ -33,12 +27,10 @@ SPEC REPOS:
     - Alamofire
     - AMPopTip
     - Charts
-    - DropDown
     - IQKeyboardManagerSwift
     - Kingfisher
     - MBProgressHUD
     - ObjectMapper
-    - SimpleAnimation
     - SwiftyJSON
     - Toast-Swift
 
@@ -46,15 +38,13 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AMPopTip: 093366c8dab16a2d0bf46c73d5837b6a2a603774
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
-  DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
-  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
-  SimpleAnimation: 5430010b9548f392e7459290acce01c9ceba7171
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
-PODFILE CHECKSUM: 28096e1fb4f784e50c1eb04b1697b6fbaa44b35d
+PODFILE CHECKSUM: b7119b2214817bd0b35984cc8c04644bc7c9cfd3
 
-COCOAPODS: 1.9.0.beta.2
+COCOAPODS: 1.9.1

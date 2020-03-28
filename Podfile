@@ -10,11 +10,9 @@ target 'ECGame' do
     pod 'IQKeyboardManagerSwift', '6.5.4'
     pod 'Toast-Swift', '~> 4.0.0'
     pod 'SwiftyJSON', '~> 4.0'  
-    pod 'Kingfisher'
+    pod 'Kingfisher', '4.9.0'
     pod 'Alamofire', '4.9.1'
-    pod "SimpleAnimation"    
     pod 'ObjectMapper'
-    pod 'DropDown', '2.3.4'
     pod 'AMPopTip'
     pod 'Charts'
   target 'ECGameTests' do
@@ -22,12 +20,4 @@ target 'ECGame' do
     # Pods for testing
   end
 
-end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '4.2'
-        end
-    end
 end

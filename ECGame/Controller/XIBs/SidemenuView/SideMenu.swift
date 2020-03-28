@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-import SimpleAnimation
+
 
 
 class SideMenu: UIView, UITableViewDelegate, UITableViewDataSource {
@@ -55,7 +55,6 @@ class SideMenu: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func closeMenuAction(_ sender: Any) {
-        self.popIn()
         self.removeFromSuperview()
     }
     
@@ -88,8 +87,6 @@ extension SideMenu {
     }
      
     func  tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        self.popIn()
         self.removeFromSuperview()
         delegate?.openMenuAction(selectedValue: indexPath.row, viewController: menuArray[indexPath.row]["viewController"].string!)
     }

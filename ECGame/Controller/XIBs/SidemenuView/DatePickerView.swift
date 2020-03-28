@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SimpleAnimation
 
 class DatePickerView: UIView{
 
@@ -49,7 +48,6 @@ class DatePickerView: UIView{
 
     //MARK:- IBAction Method
     func removePickerView() {
-        self.popIn()
         self.removeFromSuperview()
     }
     func setDateToButtonObject() {

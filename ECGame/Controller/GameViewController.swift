@@ -8,9 +8,7 @@
 
 import UIKit
 import AVFoundation
-import DropDown
 import Charts
-import SimpleAnimation
 import ObjectMapper
 import AMPopTip
 
@@ -73,7 +71,6 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
     var chipsArray = [String]()
     var player : AVAudioPlayer?
     var mousePlayer : AVAudioPlayer?
-    let dropDownObj = DropDown()
     var roadMapView = RoadMapView()
     var betCloseView = BetCloseView()
     var chiptaotalVlaue : Int = 0
@@ -141,7 +138,7 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
        
     func loadBasicView() {
        
-        self.creatDropdownNewFile()
+       // self.creatDropdownNewFile()
         self.createChartView()
         self.updateFlagForSelectedLanguage()
         self.setdefaultStock()
@@ -307,7 +304,6 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
         languagePopupView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.view.addSubview(languagePopupView)
         languagePopupView.layer.zPosition = 1
-        languagePopupView.popIn()
         view.bringSubviewToFront(languagePopupView)
     }
     func getMenuBtnAction()  {
@@ -319,7 +315,6 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
         sideMenuView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.view.addSubview(sideMenuView)
         sideMenuView.layer.zPosition = 1
-        sideMenuView.popIn()
     }
     func getNotificationBtnAction(sender : UIButton)  {
         if sender.isSelected == true {
@@ -408,11 +403,11 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
         for i in 0..<10 {
             tempArray.append(String(i))
         }
-        dropDownObj.anchorView = numberFDButton
-        dropDownObj.tag = BetDigit.firstDigitTag
-        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
-        dropDownObj.offsetFromWindowBottom = 10.0
-        dropDownObj.show()
+//        dropDownObj.anchorView = numberFDButton
+//        dropDownObj.tag = BetDigit.firstDigitTag
+//        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
+//        dropDownObj.offsetFromWindowBottom = 10.0
+//        dropDownObj.show()
         self.resetNumberViewButtonBackground(sender)
         self.showTooltip(textMessage: Payout.numberFistLast.localiz(), tempBtn: sender, tempView: numberView, popDirection: .up)
         self.view.bringSubviewToFront(self.popTip)
@@ -423,10 +418,10 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
         for i in 0..<10 {
             tempArray.append(String(i))
         }
-        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
-        dropDownObj.anchorView = numberLDButton
-        dropDownObj.tag = BetDigit.lastDigitTag
-        dropDownObj.show()
+//        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
+//        dropDownObj.anchorView = numberLDButton
+//        dropDownObj.tag = BetDigit.lastDigitTag
+//        dropDownObj.show()
         self.resetNumberViewButtonBackground(sender)
     }
     func getNumberTwoDigitBtnAction(_ sender: UIButton) {
@@ -435,10 +430,10 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
         for i in 0..<100 {
             tempArray.append(twoDigitFormatted(i))
         }
-        dropDownObj.anchorView = numberTDButton
-        dropDownObj.tag = BetDigit.twoDigitTag
-        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
-        dropDownObj.show()
+//        dropDownObj.anchorView = numberTDButton
+//        dropDownObj.tag = BetDigit.twoDigitTag
+//        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
+//        dropDownObj.show()
         self.resetNumberViewButtonBackground(sender)
     }
     func getNumberBothDigitBtnAction(_ sender: UIButton) {
@@ -447,10 +442,10 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
         for i in 0..<19 {
             tempArray.append(String(i))
         }
-        dropDownObj.anchorView = numberBDButton
-        dropDownObj.tag = BetDigit.bothDigitTag
-        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
-        dropDownObj.show()
+//        dropDownObj.anchorView = numberBDButton
+//        dropDownObj.tag = BetDigit.bothDigitTag
+//        dropDownObj.setData(btn: numberFDButton, dataSource: tempArray)
+//        dropDownObj.show()
         self.resetNumberViewButtonBackground(sender)
     }
     //Bet confirm /clear
@@ -537,25 +532,25 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
     //MARK: - Dropdown Actions -
     @objc func selectfromDropdown(sender : UIButton) {
         self.view.endEditing(true)
-        dropDownObj.anchorView = stockView
+        //dropDownObj.anchorView = stockView
         if sender.tag == 9 {
-            dropDownObj.tag = 9
-            dropDownObj.dataSource = [Stock.USStock.localiz(), Stock.ChinaStock.localiz(), Stock.CryptoCurrency.localiz()]
+           // dropDownObj.tag = 9
+          //  dropDownObj.dataSource = [Stock.USStock.localiz(), Stock.ChinaStock.localiz(), Stock.CryptoCurrency.localiz()]
             appDelegate.sharedInstance.dropdownArray = [Stock.USStock, Stock.ChinaStock, Stock.CryptoCurrency]
         }
         else if sender.tag == 10 {
-            dropDownObj.tag = 10
+        //    dropDownObj.tag = 10
             let selectedStock = stockLbl.text?.localiz()
             if selectedStock == Stock.USStock.localiz() {
-                dropDownObj.dataSource = [Stock.USDollarIndiex.localiz()]
+          //      dropDownObj.dataSource = [Stock.USDollarIndiex.localiz()]
                 appDelegate.sharedInstance.dropdownArray = [Stock.USDollarIndiex]
             }
             else if selectedStock == Stock.ChinaStock.localiz() {
-                dropDownObj.dataSource = [Stock.SH000001, Stock.SZ399001, Stock.SZ399415, Stock.SH000300]
+         //       dropDownObj.dataSource = [Stock.SH000001, Stock.SZ399001, Stock.SZ399415, Stock.SH000300]
                 appDelegate.sharedInstance.dropdownArray = [Stock.SH000001, Stock.SZ399001, Stock.SZ399415, Stock.SH000300]
             }
             else if selectedStock == Stock.CryptoCurrency.localiz() {
-                dropDownObj.dataSource = [Stock.BTCUSDT.localiz()]
+        //        dropDownObj.dataSource = [Stock.BTCUSDT.localiz()]
                 appDelegate.sharedInstance.dropdownArray = [Stock.BTCUSDT]
             }
             else {
@@ -564,18 +559,18 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
             }
         }
         else if sender.tag == 11 {
-            dropDownObj.tag = 11
+      //      dropDownObj.tag = 11
             let selectedStock = stockLbl.text?.localiz()
             if selectedStock == Stock.CryptoCurrency.localiz() {
-                dropDownObj.dataSource = [Stock.fiveMinutes.localiz(), Stock.oneMinutes.localiz()]
+       //         dropDownObj.dataSource = [Stock.fiveMinutes.localiz(), Stock.oneMinutes.localiz()]
                 appDelegate.sharedInstance.dropdownArray = [Stock.fiveMinutes, Stock.oneMinutes]
             }
             else {
-                dropDownObj.dataSource = [Stock.fiveMinutes.localiz()]
+       //         dropDownObj.dataSource = [Stock.fiveMinutes.localiz()]
                 appDelegate.sharedInstance.dropdownArray = [Stock.fiveMinutes]
             }
         }
-        dropDownObj.show()
+    //    dropDownObj.show()
     }
 
     // MARK:- Delegate Method -
@@ -627,90 +622,90 @@ class GameViewController: UIViewController, RoadMapDelegate, ChartViewDelegate, 
     }
     
     //MARK: - Drop Down -
-    func creatDropdownNewFile()  {
-        
-        self.view.bringSubviewToFront(dropDownObj)
-        dropDownObj.topOffset = self.view.center
-        dropDownObj.width = stockView.frame.width
-        dropDownObj.cornerRadius = 10
-        dropDownObj.textFont = UIFont.init(name: "Optima", size: 14.0)!
-        dropDownObj.textColor = CommonMethods.hexStringToUIColor(hex: Color.dropdownTextColor)
-        
-        dropDownObj.selectionAction = { [unowned self] (index: Int, item: String) in
-            //print("Selected item: \(item) at index: \(index)")
-            self.dropDownObj.hide()
-            if self.dropDownObj.tag == 9 {
-                self.stockLbl.text = appDelegate.sharedInstance.dropdownArray[index].localiz() //item.localiz()
-                self.BTULbl.text = Stock.selectBTU.localiz()
-                self.timeLbl.text = Stock.selectTime.localiz()
-                appDelegate.sharedInstance.selectedStockname = appDelegate.sharedInstance.dropdownArray[index]
-            }
-            else if self.dropDownObj.tag == 10 {
-                self.stockLbl.text = appDelegate.sharedInstance.selectedStockname.localiz()
-                self.BTULbl.text = appDelegate.sharedInstance.dropdownArray[index].localiz()
-                self.timeLbl.text = Stock.selectTime.localiz()
-                appDelegate.sharedInstance.selectedBTUName = appDelegate.sharedInstance.dropdownArray[index]
-            }
-            else if self.dropDownObj.tag == 11 {
-                self.stockLbl.text = appDelegate.sharedInstance.selectedStockname.localiz()
-                self.BTULbl.text = appDelegate.sharedInstance.selectedBTUName.localiz()
-                self.timeLbl.text = appDelegate.sharedInstance.dropdownArray[index].localiz()
-                appDelegate.sharedInstance.selectedTimeLoop = appDelegate.sharedInstance.dropdownArray[index]
-                if self.stockLbl.text?.localiz() == Stock.CryptoCurrency.localiz() {
-                    if self.timeLbl.text?.localiz() == Stock.oneMinutes.localiz() {
-                        self.selectedStockId = "7"
-                        self.timeloop = 60
-                    }
-                    else {
-                        self.selectedStockId = "6"
-                        self.timeloop = 300
-                    }
-                }
-                else if self.stockLbl.text?.localiz() == Stock.USStock.localiz() {
-                    self.selectedStockId = "5"
-                    self.timeloop = 300
-                }
-                else if self.stockLbl.text?.localiz() == Stock.ChinaStock.localiz() {
-                    if self.BTULbl.text == Stock.SH000001 {
-                        self.selectedStockId = "1"
-                        self.timeloop = 300
-                    }
-                    else if self.BTULbl.text == Stock.SZ399001 {
-                        self.selectedStockId = "4"
-                        self.timeloop = 300
-                    }
-                    else if self.BTULbl.text == Stock.SZ399415 {
-                        self.selectedStockId = "3"
-                        self.timeloop = 300
-                    }
-                    else if self.BTULbl.text == Stock.SH000300 {
-                        self.selectedStockId = "2"
-                        self.timeloop = 300
-                    }
-                }
-                //Call to update Stock
-                self.getTimerInfoAPI()
-                self.getRoadmapDataFromServer(stockID: self.selectedStockId)
-                self.getNotificationAPI()
-            }
-            else if self.dropDownObj.tag == BetDigit.firstDigitTag {
-                self.betDigitString = BetDigit.firstdigit
-                self.digitTypeString = item
-            }
-            else if self.dropDownObj.tag == BetDigit.lastDigitTag {
-                self.betDigitString = BetDigit.lastdigit
-                self.digitTypeString = item
-            }
-            else if self.dropDownObj.tag == BetDigit.twoDigitTag {
-                self.betDigitString = BetDigit.twodigit
-                self.digitTypeString = item
-            }
-            else if self.dropDownObj.tag == BetDigit.bothDigitTag {
-                self.betDigitString = BetDigit.bothdigit
-                self.digitTypeString = item
-            }
-        }
-    }
+//    func creatDropdownNewFile()  {
+//
+////        self.view.bringSubviewToFront(dropDownObj)
+////        dropDownObj.topOffset = self.view.center
+////        dropDownObj.width = stockView.frame.width
+////        dropDownObj.cornerRadius = 10
+////        dropDownObj.textFont = UIFont.init(name: "Optima", size: 14.0)!
+////        dropDownObj.textColor = CommonMethods.hexStringToUIColor(hex: Color.dropdownTextColor)
+////
+////        dropDownObj.selectionAction = { [unowned self] (index: Int, item: String) in
+//            //print("Selected item: \(item) at index: \(index)")
+//            self.dropDownObj.hide()
+//            if self.dropDownObj.tag == 9 {
+//                self.stockLbl.text = appDelegate.sharedInstance.dropdownArray[index].localiz() //item.localiz()
+//                self.BTULbl.text = Stock.selectBTU.localiz()
+//                self.timeLbl.text = Stock.selectTime.localiz()
+//                appDelegate.sharedInstance.selectedStockname = appDelegate.sharedInstance.dropdownArray[index]
+//            }
+//            else if self.dropDownObj.tag == 10 {
+//                self.stockLbl.text = appDelegate.sharedInstance.selectedStockname.localiz()
+//                self.BTULbl.text = appDelegate.sharedInstance.dropdownArray[index].localiz()
+//                self.timeLbl.text = Stock.selectTime.localiz()
+//                appDelegate.sharedInstance.selectedBTUName = appDelegate.sharedInstance.dropdownArray[index]
+//            }
+//            else if self.dropDownObj.tag == 11 {
+//                self.stockLbl.text = appDelegate.sharedInstance.selectedStockname.localiz()
+//                self.BTULbl.text = appDelegate.sharedInstance.selectedBTUName.localiz()
+//                self.timeLbl.text = appDelegate.sharedInstance.dropdownArray[index].localiz()
+//                appDelegate.sharedInstance.selectedTimeLoop = appDelegate.sharedInstance.dropdownArray[index]
+//                if self.stockLbl.text?.localiz() == Stock.CryptoCurrency.localiz() {
+//                    if self.timeLbl.text?.localiz() == Stock.oneMinutes.localiz() {
+//                        self.selectedStockId = "7"
+//                        self.timeloop = 60
+//                    }
+//                    else {
+//                        self.selectedStockId = "6"
+//                        self.timeloop = 300
+//                    }
+//                }
+//                else if self.stockLbl.text?.localiz() == Stock.USStock.localiz() {
+//                    self.selectedStockId = "5"
+//                    self.timeloop = 300
+//                }
+//                else if self.stockLbl.text?.localiz() == Stock.ChinaStock.localiz() {
+//                    if self.BTULbl.text == Stock.SH000001 {
+//                        self.selectedStockId = "1"
+//                        self.timeloop = 300
+//                    }
+//                    else if self.BTULbl.text == Stock.SZ399001 {
+//                        self.selectedStockId = "4"
+//                        self.timeloop = 300
+//                    }
+//                    else if self.BTULbl.text == Stock.SZ399415 {
+//                        self.selectedStockId = "3"
+//                        self.timeloop = 300
+//                    }
+//                    else if self.BTULbl.text == Stock.SH000300 {
+//                        self.selectedStockId = "2"
+//                        self.timeloop = 300
+//                    }
+//                }
+//                //Call to update Stock
+//                self.getTimerInfoAPI()
+//                self.getRoadmapDataFromServer(stockID: self.selectedStockId)
+//                self.getNotificationAPI()
+//            }
+//            else if self.dropDownObj.tag == BetDigit.firstDigitTag {
+//                self.betDigitString = BetDigit.firstdigit
+//                self.digitTypeString = item
+//            }
+//            else if self.dropDownObj.tag == BetDigit.lastDigitTag {
+//                self.betDigitString = BetDigit.lastdigit
+//                self.digitTypeString = item
+//            }
+//            else if self.dropDownObj.tag == BetDigit.twoDigitTag {
+//                self.betDigitString = BetDigit.twodigit
+//                self.digitTypeString = item
+//            }
+//            else if self.dropDownObj.tag == BetDigit.bothDigitTag {
+//                self.betDigitString = BetDigit.bothdigit
+//                self.digitTypeString = item
+//            }
+//        }
+//    }
     
     //MARK: - Create Tooltip -
     func createTooltipforPayout() -> Void {
@@ -1312,16 +1307,16 @@ class ChipsCell: UICollectionViewCell {
     }
 }
 
-extension DropDown {
-    
-    func setData(btn: UIButton?, dataSource: [String]){
-        guard let btn = btn else { return }
-        self.semanticContentAttribute = .unspecified
-        self.anchorView = btn
-        self.bottomOffset = CGPoint(x: 0, y: btn.bounds.height)
-        self.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            cell.optionLabel.textAlignment = .center
-        }
-        self.dataSource = dataSource
-    }
-}
+//extension DropDown {
+//
+//    func setData(btn: UIButton?, dataSource: [String]){
+//        guard let btn = btn else { return }
+//        self.semanticContentAttribute = .unspecified
+//        self.anchorView = btn
+//        self.bottomOffset = CGPoint(x: 0, y: btn.bounds.height)
+//        self.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+//            cell.optionLabel.textAlignment = .center
+//        }
+//        self.dataSource = dataSource
+//    }
+//}
