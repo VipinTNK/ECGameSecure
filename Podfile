@@ -6,7 +6,7 @@ target 'ECGame' do
   use_frameworks!
 
   # Pods for ECGame
-    pod 'MBProgressHUD', '1.1.0'
+    pod 'MBProgressHUD', '1.1.0', :modular_headers => true
     pod 'IQKeyboardManagerSwift', '6.5.4'
     pod 'Toast-Swift', '~> 4.0.0'
     pod 'SwiftyJSON', '~> 4.0'  
