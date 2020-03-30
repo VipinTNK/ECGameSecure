@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
  s.resources = 'ECGame/**/*.{storyboard,xib,xcassets,lproj,json,png,mp3}'
 
 s.framework = "UIKit"
-s.dependency 'MBProgressHUD', '1.1.0', :modular_headers => true
+s.dependency 'MBProgressHUD', '1.1.0'
 s.dependency 'IQKeyboardManagerSwift', '6.5.4'
 s.dependency 'Toast-Swift', '~> 4.0.0'
 s.dependency 'SwiftyJSON', '~> 4.0'
